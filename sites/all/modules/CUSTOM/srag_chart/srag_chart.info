@@ -1,0 +1,4 @@
+name = SRAG Chart
+description = Provides some useful functions for drawing graphs and charts with Javascript
+core = 7.x
+
