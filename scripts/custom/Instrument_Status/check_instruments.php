@@ -71,7 +71,7 @@ if ($lastRcvd['RAD'] < $threshold) { mssql_query('UPDATE ISSInstrumentCheck SET 
 mssql_close($connection);
 
 } catch (Exception $e) {
-	echo 'Caught Exception: ', $e->getMessage(), "\n";
+	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
 ?>

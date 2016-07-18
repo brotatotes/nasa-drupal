@@ -1,6 +1,25 @@
-.center-panel {
+/* SRAG homepage elements */
 
-		
+#iss-instruments {
+
+}
+
+#console-duty {
+	text-align: center;
+}
+
+#space-environment-conditions {
+	text-align: center;	
+}
+
+.srag-home {
+	font-size:125%;
 }
 
 
+/* TEPC Display page elements */
+
+#tepc-dose-rates {
+	text-align: center;
+	zoom:0.8;
+}

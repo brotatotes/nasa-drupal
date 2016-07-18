@@ -1,5 +1,5 @@
 <?php
-
+// Called in: Structure->Blocks->"ISS TEPC Cumulative Dose & Dose Data"
 
 try {
 
@@ -36,22 +36,28 @@ while ($row = mssql_fetch_array($qResult)) {
 }
 $data .= "]";
 
-
-
 mssql_close($connection);
+
 } catch(Exception $e) {
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
-
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript" src="http://dygraphs.com/1.1.1/dygraph-combined.js"></script>
-<script type="text/javascript" src="./sites/all/modules/CUSTOM/srag_chart/SRAGChart.js"></script>
+
+<?php
+try {
+	drupal_add_js('https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js','external');
+	drupal_add_js('http://dygraphs.com/1.1.1/dygraph-combined.js','external');
+	drupal_add_js('/sites/all/modules/CUSTOM/srag_chart/SRAGChart.js','file');
+} catch(Exception $e) {
+	echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+?>
 
 <div align="center">
-<div id="demodiv" name="demodiv" style="width: 1000px; height: 600px"></div>
+<div id="demodiv" name="demodiv" style="width: 100%; height: 360px"></div>
 <div style="font-family:arial;color:black;font-size:15px;font-style:italic">Click and drag left/right or up/down to zoom. Dbl Click to restore.</div>
 <script>
+try {
 	var data = '<?php echo $data; ?>';
 	data = JSON.parse(data);
 	var g;
@@ -71,4 +77,10 @@ mssql_close($connection);
    		}
 	});
 	g = drawChart(dcArray,"ISS TEPC Cumulative Dose & Dose Data", "blue", "red", 15);
+} catch(err) {
+	console.log("TEPC Display error: " + err.message);
+}
+
+setInterval(function() {location.reload();},60000);
 </script>
+
