@@ -1,9 +1,16 @@
 <?php
 
-
 try {
 
-global $databases; 
+define('DRUPAL_ROOT', '/opt/bitnami/apps/drupal/htdocs/'); //the most important line
+require_once '../../../includes/bootstrap.inc';
+drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+
+if(htmlspecialchars($_GET["method"]) != "vxtgh") {
+	die("Unable to authorize.");
+}
+
+global $databases;
 $server = $databases['srag_dev']['default']['host'];
 $username = $databases['srag_dev']['default']['username'];
 $password = $databases['srag_dev']['default']['password'];
@@ -14,14 +21,14 @@ $connection = mssql_connect($server, $username, $password);
 if($connection != FALSE) {
 // echo "Connected to the database server OK<br />";
 } else {
-	die("Couldn't connect");
+	echo "Couldn't connect<br>";
 }
 
 //select database and check 
 if(mssql_select_db($database, $connection)) {
 // echo "Selected $database ok<br />";
 } else {
-	die('Failed to select DB');
+	echo "Failed to select DB<br>" ;
 }
 
 $tdate = date("Y-m-d H:i:s", strtotime('now',time()));
