@@ -1,0 +1,33 @@
+<?php
+
+module_load_include('module', 'user', 'user.module');
+
+/**
+* Gets the group name of the current user
+* @returns string title of user's group
+* /
+function srag_get_group() {
+// figure out what group the user is in
+	global $user;
+	$uid = $user->uid;
+	if($uid > 0) {
+		// get the user's gid
+		$result = db_query('SELECT gid FROM group_membership WHERE uid = :uid', array(':uid' => $uid));
+		$ret = $result->fetchAllAssoc('gid');
+		$g = array_shift($ret);
+		$gid = $g->gid;
+
+		// use gid to get the group name
+		$result = db_query('SELECT title FROM groups WHERE gid = :gid', array(':gid' => $gid));
+		$ret = $result->fetchAllAssoc('title');
+		$n = array_shift($ret);
+		$gname = $n->title;
+		return $gname;
+	} else {
+		return "";
+	}
+}
+
+function srag_test() {
+	return "hello, yes I'm here."
+}

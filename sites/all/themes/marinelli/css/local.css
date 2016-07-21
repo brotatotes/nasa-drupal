@@ -23,3 +23,9 @@
 	text-align: center;
 	zoom:0.8;
 }
+
+/* AJAX page elements */
+
+#ajax {
+	word-break: break-all;
+}
