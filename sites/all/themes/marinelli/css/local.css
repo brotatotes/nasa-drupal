@@ -24,6 +24,10 @@
 	zoom:0.8;
 }
 
+.tepc-titles {
+	text-align: center;
+}
+
 /* AJAX page elements */
 
 #ajax {

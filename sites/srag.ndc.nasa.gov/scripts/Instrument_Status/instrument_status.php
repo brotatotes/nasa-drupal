@@ -68,13 +68,13 @@ mssql_close($connection);
 
 $table = "<table style=\"width:100%; border: 1px solid black; table-layout: fixed;\">";
 $table .= "<tr style=\"border: 1px solid black;\">";
-$table .= "<td><center><strong style=\"font-size:20px;\">Instrument</strong></center></td>";
-$table .= "<td><center><strong style=\"font-size:20px;\">TEPC</strong></center></td>";
-$table .= "<td><center><strong style=\"font-size:20px;\">IV-TEPC</strong></center></td>";
-$table .= "<td><center><strong style=\"font-size:20px;\">Rad Detector</strong></center></td>";
-$table .= "<td><center><strong style=\"font-size:20px;\">EV1-CPDS</strong></center></td>";
-$table .= "<td><center><strong style=\"font-size:20px;\">EV2-CPDS</strong></center></td>";
-$table .= "<td><center><strong style=\"font-size:20px;\">EV3-CPDS</strong></center></td>";
+$table .= "<th><center><strong style=\"font-size:20px;\">Instrument</strong></center></th>";
+$table .= "<th><center><strong style=\"font-size:20px;\">TEPC</strong></center></th>";
+$table .= "<th><center><strong style=\"font-size:20px;\">IV-TEPC</strong></center></th>";
+$table .= "<th><center><strong style=\"font-size:20px;\">Rad Detector</strong></center></th>";
+$table .= "<th><center><strong style=\"font-size:20px;\">EV1-CPDS</strong></center></th>";
+$table .= "<th><center><strong style=\"font-size:20px;\">EV2-CPDS</strong></center></th>";
+$table .= "<th><center><strong style=\"font-size:20px;\">EV3-CPDS</strong></center></th>";
 $table .= "</tr>";
 
 $table .= "<tr style=\"border: 1px solid black;\">";

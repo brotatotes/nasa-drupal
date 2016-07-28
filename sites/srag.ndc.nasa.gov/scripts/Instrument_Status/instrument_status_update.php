@@ -41,7 +41,7 @@ $checkboxes['IVTEPC'] = '<input type="checkbox" name="IVTEPC_box" value="1">';
 $checkboxes['RAD'] = '<input type="checkbox" name="RAD_box" value="1">';
 
 //create table:
-$table = "<table style=\"width:100%; border: 1px solid black; table-layout: fixed;\">";
+$table = "<table role='presentation' style=\"width:100%; border: 1px solid black; table-layout: fixed;\">";
 $table .= "<tr style=\"border: 1px solid black;\">";
 $table .= "<td><center><strong style=\"font-size:20px;\">Acknowledge</strong></center></td>";
 if($status['TEPC'][0] == 'R') {

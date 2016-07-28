@@ -61,6 +61,6 @@
 }
 
 #navigation-secondary li a.active:before{
-	content:"↓";
+	/* content:"↓"; */
 }
 	 
