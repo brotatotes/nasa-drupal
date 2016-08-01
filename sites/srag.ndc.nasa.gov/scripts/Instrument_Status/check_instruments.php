@@ -58,7 +58,7 @@ $lastRcvd['IVTEPC'] = strtotime('now',time()) - strtotime($instrChk['IVTEPC'], t
 $lastRcvd['RAD'] = strtotime('now',time()) - strtotime($instrChk['RAD'], time());
 
 //if there has been data within the last 90 minutes, update to green.
-$threshold = 90 * 60; //90 minutes in seconds
+$threshold = 5 * 60; //5 minutes in seconds
 if ($lastRcvd['TEPC'] < $threshold) { mssql_query('UPDATE ISSInstrumentCheck SET TEPC = "Green"'); }
 if ($lastRcvd['EV1'] < $threshold) { mssql_query('UPDATE ISSInstrumentCheck SET EV1 = "Green"'); }
 if ($lastRcvd['EV2'] < $threshold) { mssql_query('UPDATE ISSInstrumentCheck SET EV2 = "Green"'); }
